@@ -27,7 +27,7 @@ public class AIHelperWindowFactory implements ToolWindowFactory {
         toolWindow.getContentManager().addContent(content);
         List<AnAction> actionList = new ArrayList<>();
 
-        actionList.add(new DumbAwareAction(AllIcons.General.Settings) {
+        actionList.add(new DumbAwareAction(() -> "设置",AllIcons.General.Settings) {
             @Override
             public void actionPerformed(@NotNull AnActionEvent e) {
                 ShowSettingsUtil.getInstance().showSettingsDialog(e.getProject());
